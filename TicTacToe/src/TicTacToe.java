@@ -9,7 +9,12 @@ public class TicTacToe {
  JFrame board = new JFrame();
 
  TicTacToe(){
+   //creating a board to build the game on top of 
     board.setVisible(true);
     board.setSize(boardwidth,boardheight);
+    board.setLocationRelativeTo(null); //Will print it in the middle of the screen
+    board.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    board.setLayout(new BorderLayout());
+
  }
 }
