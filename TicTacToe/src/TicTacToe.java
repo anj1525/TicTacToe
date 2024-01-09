@@ -107,4 +107,28 @@ public class TicTacToe {
             setTie();
         }
     }
+     private void setWinner(JButton... buttons) {
+        for (JButton button : buttons) {
+            button.setBackground(new Color(129, 177, 169)); // Color: 81B1A9
+            button.setForeground(Color.black);
+        }
+        tJLabel.setText(currentP + " is the winner!");
+        gameFinished = true;
+    }
+
+    private void setTie() {
+        for (int r = 0; r < 3; r++) {
+            for (int c = 0; c < 3; c++) {
+                frame[r][c].setBackground(new Color(129, 177, 169)); // Color: 81B1A9
+                frame[r][c].setForeground(Color.black);
+            }
+        }
+        tJLabel.setText("Tie!");
+        gameFinished = true;
+    }
+
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new TicTacToe());
+    }
 }
